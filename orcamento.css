@@ -1,0 +1,860 @@
+/* Adicione no topo do seu CSS, após as importações existentes */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Reset e Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Todos os estilos anteriores permanecem iguais até o ponto onde queremos adicionar os novos estilos */
+
+/* Header Novo e Profissional */
+.site-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    position: relative !important; /* Forçando position relative */
+    width: 100%;
+    z-index: 1;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Container Principal - Removendo margem superior grande */
+#orcamento {
+    max-width: 1200px;
+    margin: 20px auto 40px;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Resetando margens do topo */
+#topo {
+    margin-top: 0;
+    padding-top: 20px;
+}
+
+/* Reset para body */
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Reset para elementos principais */
+main, 
+#inicio, 
+.hero-section {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .header-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #orcamento {
+        margin: 10px 1rem 1rem;
+        padding: 1rem;
+    }
+}
+
+/* Importação de fonte para os labels */
+
+h1 .highlight-orange {
+    background: linear-gradient(120deg, #ff6b33 0%, #ff8c33 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
+h1 .highlight {
+    color: #3498db; /* Cor azul que combina com seu tema */
+    font-weight: 600;
+    /* Opcional: você pode adicionar outros efeitos */
+    text-decoration: underline;
+    /* ou */
+    border-bottom: 2px solid #3498db;
+    /* ou */
+    background: linear-gradient(120deg, #3498db 0%, #2ecc71 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Estilos para Labels */
+label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #34495e;
+    margin-bottom: 0.8rem;
+    display: inline-block;
+    position: relative;
+    padding-left: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+/* Ícone decorativo antes do label */
+label::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: #3498db;
+    font-size: 1.4rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+/* Efeito hover no label */
+label:hover {
+    color: #2980b9;
+    transform: translateX(5px);
+}
+
+label:hover::before {
+    color: #2ecc71;
+    transform: translateX(2px);
+}
+
+/* Estilo especial para labels de campos obrigatórios */
+label.required::after {
+    content: '*';
+    color: #e74c3c;
+    margin-left: 4px;
+    font-size: 1.2rem;
+}
+
+/* Estilo para labels de grupos de checkboxes/radio */
+.checkbox-group label, 
+.radio-group label {
+    font-size: 1rem;
+    padding-left: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Efeito de destaque para labels ativos */
+.form-group:focus-within label {
+    color: #2980b9;
+    transform: translateX(5px);
+}
+
+/* Container de form-group com efeito de card */
+.form-group {
+    background: #ffffff;
+    padding: 1.2rem;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.form-group:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-color: #3498db;
+}
+
+/* Novo estilo para as legends */
+legend {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2c3e50;
+    padding: 0.5rem 1.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(52, 152, 219, 0.2);
+    position: relative;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+legend::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #3498db, #2ecc71, #3498db);
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0.3;
+    animation: gradientBorder 3s ease infinite;
+}
+
+legend:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+legend:hover::before {
+    opacity: 0.5;
+}
+
+@keyframes gradientBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+/* Reset e Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-image: url('/images/texturas-de-fundo-de-papel-branco_1036998-289261.avif');
+    background-repeat: repeat;
+    background-size: auto;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Novo e Profissional */
+.site-header {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.logo h1 {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.header-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.header-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.header-nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Container Principal */
+#orcamento {
+    max-width: 1200px;
+    margin: 120px auto 40px;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Checkboxes Estilizados */
+.checkbox-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.checkbox-wrapper {
+    position: relative;
+    width: calc(33.33% - 1rem);
+    min-width: 200px;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-wrapper label {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.checkbox-wrapper label:before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid #3498db;
+    border-radius: 4px;
+    margin-right: 10px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + label {
+    background: #ebf5ff;
+    border-color: #3498db;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + label:before {
+    background-color: #3498db;
+    border-color: #3498db;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E");
+    background-size: 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.checkbox-wrapper label:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+}
+
+/* Footer Novo e Profissional */
+.site-footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: white;
+    padding: 4rem 0 2rem;
+    margin-top: 6rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.footer-section {
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .header-nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .checkbox-wrapper {
+        width: 100%;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+}
+
+/* Mantendo os outros estilos existentes ... */
+/* Reset e Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-image: url('/images/texturas-de-fundo-de-papel-branco_1036998-289261.avif');
+    background-repeat: repeat;
+    background-size: auto;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Principal */
+#orcamento {
+    max-width: 1200px;
+    margin: 80px auto 40px;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabeçalho */
+#topo h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Seções do Formulário */
+.section {
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.section h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.5rem;
+}
+
+/* Campos do Formulário */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+/* Grupos de Campos */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Calculadora de Metros */
+#calculadora {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+}
+
+#calculadora h3 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* Botões */
+button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Upload de Arquivos */
+.file-list {
+    border: 2px dashed #ddd;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    margin: 1rem 0;
+    transition: border-color 0.3s ease;
+}
+
+.file-list:hover {
+    border-color: #3498db;
+}
+
+/* Modal */
+.file-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 50px auto;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+/* Botões Fixos */
+.fixed-buttons {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.fixed-buttons a {
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+}
+
+.fixed-buttons a:hover {
+    background: #2980b9;
+    transform: scale(1.1);
+}
+
+/* Checkbox Container */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.checkbox-container input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #orcamento {
+        margin: 60px 1rem 1rem;
+        padding: 1rem;
+    }
+
+    .section {
+        padding: 1rem;
+    }
+
+    .fixed-buttons {
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 16px; /* Evita zoom em dispositivos móveis */
+    }
+}
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Mensagens de Erro e Sucesso */
+.error {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 0.3rem;
+}
+
+.success {
+    color: #2ecc71;
+    padding: 1rem;
+    background: rgba(46, 204, 113, 0.1);
+    border-radius: 5px;
+    margin: 1rem 0;
+}
+/* Estilos dos botões */
+.calculadora-btn, 
+.orcamento-btn {
+  position: relative;
+  padding: 15px 30px;
+  font-size: 18px;
+  color: white;
+  background: transparent;
+  border: 2px solid #0099ff;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: blueGlow 3s infinite;
+}
+
+/* Efeito de onda d'água */
+.calculadora-btn:before, 
+.orcamento-btn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 153, 255, 0.2),
+    transparent
+  );
+  animation: waterWave 2s infinite;
+}
+
+/* Animação do brilho azul */
+@keyframes blueGlow {
+  0% {
+    box-shadow: 0 0 5px #0066cc,
+                0 0 10px #0066cc,
+                0 0 15px #0099ff;
+    background-color: rgba(0, 102, 204, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 10px #0099ff,
+                0 0 20px #0099ff,
+                0 0 30px #00ccff;
+    background-color: rgba(0, 153, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 5px #0066cc,
+                0 0 10px #0066cc,
+                0 0 15px #0099ff;
+    background-color: rgba(0, 102, 204, 0.1);
+  }
+}
+
+/* Animação da onda */
+@keyframes waterWave {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Efeito hover */
+.calculadora-btn:hover,
+.orcamento-btn:hover {
+  background-color: rgba(0, 153, 255, 0.3);
+  transform: scale(1.05);
+}
+/* Botão Enviar Orçamento */
+.button-orcamento {
+    background: linear-gradient(90deg, #1E90FF, #00BFFF);
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Efeito hover para Enviar Orçamento */
+.button-orcamento:hover {
+    background: linear-gradient(90deg, #00BFFF, #1E90FF);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
+
+/* Botão Calculadora de Metros Quadrados */
+.button-calculadora {
+    background: linear-gradient(90deg, #007ACC, #005FAF);
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+/* Efeito hover para Calculadora */
+.button-calculadora:hover {
+    background: linear-gradient(90deg, #005FAF, #007ACC);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}

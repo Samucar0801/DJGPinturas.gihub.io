@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Orçamento</title>
+    <link rel="stylesheet" href="/Orcamento/css e js do html/Numero5.html">
+    <link rel="stylesheet" href="orcamento.css" />
+    <link rel="stylesheet" href="/Calculadora/calculadora.html" />
+    <!-- Favicon básico usando sua logo -->
+    <link rel="icon" type="image/png" href="\images\LOGO EMPRESSA.png" />
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="\images\LOGO EMPRESSA.png"
+    />
+    <!-- Para Apple/iOS -->
+    <link rel="apple-touch-icon" href="\images\LOGO EMPRESSA.png" />
+    <!-- Para garantir compatibilidade com diferentes navegadores -->
+    <link rel="icon" type="image/png" href="\images\LOGO EMPRESSA.png" />
+    <link rel="stylesheet" href="/Orcamento/css e js do html/csshtml.css" />
+    <link rel="stylesheet" href="/Orcamento/css e js do html/jshtml.js" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="header-container">
+        <div class="logo">
+          <img src="/images/LOGO EMPRESSA.png" alt="DJGpinturas Logo" />
+          <h1><span class="highlight-orange">DJG</span>pinturas</h1>
+          <h1><span class="highlight">Orçamentos</span></h1>
+        </div>
+        <nav class="header-nav">
+          <a href="#topo">Início</a>
+          <a href="#orcamento">Orçamento</a>
+          <a href="/contato/contato.html">Contato</a>
+        </nav>
+      </div>
+    </header>
+    <!-- Topo do site -->
+    <section id="topo">
+      <!-- Conteúdo do topo -->
+      <!-- Links de Navegação -->
+    </section>
+    <header>
+      <h1>Solicitação de Orçamento</h1>
+    </header>
+    <form id="orcamentoForm" action="http://localhost:3001/orcamento" method="POST" enctype="multipart/form-data">
+    <form 
+        id="orcamentoForm" 
+        name="orcamento" 
+        method="POST" 
+        enctype="multipart/form-data"
+        >
+  <!-- Todo o conteúdo do formulário aqui -->
+    <main>
+      <section id="orcamento">
+        <h2>Detalhes do Orçamento</h2>
+        <form
+          action="http://localhost:3001/orcamento"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <!-- Informações do Cliente -->
+          <fieldset>
+            <legend>Informações do Cliente</legend>
+            <label for="nomeCompleto">Nome Completo:</label>
+            <input type="text" name="nomeCompleto" id="nomeCompleto" required placeholder="Nome completo">
+                    
+            <label for="cnpj">CNPJ (para pessoa jurídica):</label>
+            <input
+              type="text"
+              id="cnpj"
+              name="cnpj"
+              placeholder="CNPJ"
+              pattern="\d{2}\.\d{3}\.\d{3}/\d{4}-\d{2}"
+            />
+
+            <label for="empresa">Empresa (se aplicável):</label>
+            <input
+              type="text"
+              id="empresa"
+              name="empresa"
+              placeholder="Nome da Empresa"
+            />
+
+            <label for="cargo">Cargo (se aplicável):</label>
+            <input
+              type="text"
+              id="cargo"
+              name="cargo"
+              placeholder="Seu Cargo"
+            />
+
+            <label for="referencias">Referências:</label>
+            <input
+              type="text"
+              id="referencias"
+              name="referencias"
+              placeholder="Quem recomendou ou referências anteriores"
+            />
+
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email" required placeholder="Seu e-mail" />
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" name="telefone" id="telefone" required placeholder="(00) 00000-0000" />
+
+            <label for="telefone-alternativo">Telefone Alternativo:</label>
+            <input
+              type="tel"
+              id="telefone-alternativo"
+              name="telefone-alternativo"
+              placeholder="Telefone Alternativo"
+            />
+          </fieldset>
+        </form>
+            
+            <fieldset>
+            <legend>Detalhes do Projeto</legend>
+            <label for="tipo-obra">Tipo de Obra:</label>
+            <select id="tipo-obra" name="tipo-obra" required>
+                <option value="reforma">Reforma</option>
+                <option value="construcao-nova">Construção Nova</option>
+                <option value="pintura">Pintura</option>
+                <option value="manutencao">Manutenção</option>
+                <option value="reparos">Reparos</option>
+                <option value="demolicao">Demolição</option>
+                <option value="reforma-comercial">Reforma Comercial</option>
+                <option value="construcao-residencial">Construção Residencial</option>
+                <option value="reforma-residencial">Reforma Residencial</option>
+                <option value="construcao-industrial">Construção Industrial</option>
+                <option value="instalacao">Instalação</option>
+                <option value="paisagismo">Paisagismo</option>
+                <option value="acabamento">Acabamento</option>
+                <option value="outros">Outros</option>
+            </select>
+
+            <label for="descricao-projeto">Descrição do Projeto:</label>
+            <textarea name="detalhes" id="detalhes" placeholder="Descreva detalhadamente o projeto. Exemplo: 'Reforma de apartamento de 3 quartos, incluindo pintura e troca"></textarea>
+            </fieldset>
+            <fieldset>
+            <legend>Endereço do Projeto</legend>
+
+            <label for="bairro">Bairro:</label>
+            <input type="text" name="bairro" id="bairro" placeholder="Escreva ou selecione seu bairro" />
+            <datalist id="bairros">
+                <option value="jardim-angela"></option>
+                <option value="jardim-sao-luis"></option>
+                <option value="jardim-santa-rita"></option>
+                <option value="jardim-sao-carlos"></option>
+                <option value="vila-do-encontro"></option>
+                <option value="vila-progredior"></option>
+                <option value="jardim-maravilha"></option>
+                <option value="jardim-ipanema"></option>
+                <option value="parque-santo-antonio"></option>
+                <option value="jardim-guaruja"></option>
+                <option value="vila-nova-cachoeirinha"></option>
+                <option value="jardim-mirna"></option>
+                <option value="jardim-planalto"></option>
+                <option value="jardim-augusto"></option>
+                <option value="vila-birigui"></option>
+                <option value="jardim-ida"></option>
+                <option value="jardim-helena"></option>
+                <option value="jardim-sao-joao"></option>
+                <option value="vila-madalena"></option>
+                <option value="brooklin"></option>
+                <option value="moema"></option>
+                <option value="jardins"></option>
+                <option value="campo-belo"></option>
+                <option value="saude"></option>
+                <option value="itaim-bibi"></option>
+                <option value="chacara-flora"></option>
+                <!-- Adicione outros bairros da Zona Sul conforme necessário -->
+            </datalist>
+            <label for="rua">Rua/Avenida:</label>
+            <input
+                type="text"
+                id="rua"
+                name="rua"
+                placeholder="Rua ou Avenida"
+                required
+            />
+
+            <label for="numero">Número:</label>
+            <input
+                type="text"
+                id="numero"
+                name="numero"
+                placeholder="Número"
+                required
+            />
+
+            <label for="complemento">Complemento:</label>
+            <input
+                type="text"
+                id="complemento"
+                name="complemento"
+                placeholder="Complemento (opcional)"
+            />
+
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" placeholder="CEP" required />
+
+            <label for="referencia-localizacao">Referência de Localização:</label>
+            <input
+                type="text"
+                id="referencia-localizacao"
+                name="referencia-localizacao"
+                placeholder="Referência de Localização (opcional)"
+            />
+
+            <label for="ponto-referencia">Ponto de Referência:</label>
+            <input
+                type="text"
+                id="ponto-referencia"
+                name="ponto-referencia"
+                placeholder="Ponto de Referência (opcional)"
+            />
+
+            <label for="entrada">Entrada:</label>
+            <input
+                type="text"
+                id="entrada"
+                name="entrada"
+                placeholder="Entrada (opcional)"
+            />
+
+            <label for="andar">Andar:</label>
+            <input
+                type="text"
+                id="andar"
+                name="andar"
+                placeholder="Andar (opcional)"
+            />
+
+            <label for="numero-bloco">Número do Bloco:</label>
+            <input
+                type="text"
+                id="numero-bloco"
+                name="numero-bloco"
+                placeholder="Número do Bloco (opcional)"
+            />
+
+            <label for="numero-sala">Número da Sala:</label>
+            <input
+                type="text"
+                id="numero-sala"
+                name="numero-sala"
+                placeholder="Número da Sala (opcional)"
+            />
+
+            <label for="descricao-adicional">Descrição Adicional:</label>
+            <input
+                type="text"
+                id="descricao-adicional"
+                name="descricao-adicional"
+                placeholder="Descrição Adicional (opcional)"
+            />
+            </fieldset>
+            <fieldset>
+            <legend>Prazos e Urgência do Projeto</legend>
+
+            <label for="data-visita">Data de Visita:</label>
+            <input
+                type="date"
+                id="data-visita"
+                name="data-visita"
+                placeholder="Sugira uma data para visita ao local, se necessário"
+            />
+
+            <label for="prazo-decisao">Prazo para Decisão:</label>
+            <input
+                type="date"
+                id="prazo-decisao"
+                name="prazo-decisao"
+                placeholder="Informe até quando precisa da decisão sobre o orçamento"
+            />
+
+            <label for="data-inicio">Data de Início Desejada:</label>
+            <input type="date" name="dataInicio" id="data-Inicio" placeholder="Data de Início" />
+
+
+            <label for="data-termino">Data de Término Desejada:</label>
+            <input type="date" name="dataFim" id="dataFim" placeholder="Data-Término" />
+
+            <label for="prioridade">Prioridade:</label>
+            <select id="prioridade" name="prioridade" required>
+                <option value="baixa">Baixa</option>
+                <option value="normal">Normal</option>
+                <option value="alta">Alta</option>
+                <option value="urgente">Urgente</option>
+            </select>
+
+            <label for="observacoes-inicio"
+                >Observações sobre a Data de Início:</label
+            >
+            <textarea
+                id="observacoes-inicio"
+                name="observacoes-inicio"
+                rows="3"
+                placeholder="Informações adicionais sobre a data de início (opcional)"
+            ></textarea>
+
+            <label for="observacoes-termino"
+                >Observações sobre a Data de Término:</label
+            >
+            <textarea
+                id="observacoes-termino"
+                name="observacoes-termino"
+                rows="3"
+                placeholder="Informações adicionais sobre a data de término (opcional)"
+            ></textarea>
+            </fieldset>
+            <fieldset>
+            <legend>Especificações do Projeto</legend>
+
+            <label for="area-total">Área Total (m²):</label>
+            <input
+                type="number"
+                id="area-total"
+                name="area-total"
+                placeholder="Informe a área total em metros quadrados"
+                required
+            />
+
+            <label for="andares">Número de Andares:</label>
+            <input
+                type="number"
+                id="andares"
+                name="andares"
+                placeholder="Quantidade de andares"
+                required
+            />
+
+            <label for="quartos">Número de Quartos:</label>
+            <input
+                type="number"
+                id="quartos"
+                name="quartos"
+                placeholder="Quantidade de quartos"
+                required
+            />
+
+            <label for="banheiros">Número de Banheiros:</label>
+            <input
+                type="number"
+                id="banheiros"
+                name="banheiros"
+                placeholder="Quantidade de banheiros"
+                required
+            /> 
+
+            <label for="comodos">Cômodos e Metros Quadrados:</label>
+            <div id="comodos-container">
+                <label for="comodo">Selecione o cômodo:</label>
+                <select id="comodo" name="comodo">
+                <option value="">Selecione um cômodo</option>
+                <option value="banheiro">Banheiro</option>
+                <option value="cozinha">Cozinha</option>
+                <option value="sala">Sala</option>
+                <option value="quarto">Quarto</option>
+                <option value="escritorio">Escritório</option>
+                <option value="salao">Salão</option>
+                <option value="lavanderia">Lavanderia</option>
+                <option value="varanda">Varanda</option>
+                <option value="garagem">Garagem</option>
+                <option value="corredor">Corredor</option>
+                <option value="sala-de-jantar">Sala de Jantar</option>
+                <option value="hall-entrada">Hall de Entrada</option>
+                <option value="despensa">Despensa</option>
+                <option value="closet">Closet</option>
+                <option value="sala-jogos">Sala de Jogos</option>
+                <option value="sala-estar">Sala de Estar</option>
+                <option value="deposito">Depósito</option>
+                <option value="estudio">Estúdio</option>
+                <option value="outro">Outro</option>
+                </select>
+
+                <label for="comodo-m2">Metros Quadrados:</label>
+                <input
+                type="number"
+                id="comodo-m2"
+                name="comodo-m2"
+                placeholder="Informe os metros quadrados do cômodo"
+                />
+
+                <label for="outro-comodo">Se "Outro", especifique o cômodo:</label>
+                <input
+                type="text"
+                id="outro-comodo"
+                name="outro-comodo"
+                placeholder="Especifique o cômodo"
+                style="display: none"
+                />
+            </div>
+
+              <!-- Primeiro, coloque esse estilo dentro da sua tag <style> -->
+<style>
+    .modal-calculadora {
+        display: none; /* Começa escondido */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5); /* Fundo escuro transparente */
+    }
+    
+    .modal-calculadora.ativo {
+        display: block; /* Mostra quando tiver a classe 'ativo' */
+    }
+    
+    .modal-conteudo {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+    }
+    
+    .modal-conteudo iframe {
+        width: 500px;
+        height: 600px;
+        border: none;
+    }
+    
+    .fechar {
+        float: right;
+        cursor: pointer;
+        font-size: 24px;
+    }
+    </style>
+    
+    <!-- Depois, coloque esse HTML onde você quer o botão e o modal -->
+    <button class="button-calculadora" onclick="abrirCalculadora()">Calculadora De Metros Quadrados</button>
+    
+    <div id="modalCalculadora" class="modal-calculadora">
+        <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharCalculadora()">&times;</span>
+            <iframe src="/Calculadora/calculadora.html"></iframe>
+        </div>
+    </div>
+    
+    <!-- Por fim, coloque esse JavaScript no final do seu arquivo -->
+    <script>
+    function abrirCalculadora() {
+        document.getElementById('modalCalculadora').classList.add('ativo');
+    }
+    
+    function fecharCalculadora() {
+        document.getElementById('modalCalculadora').classList.remove('ativo');
+    }
+    </script>
+                
+            </fieldset>
+            <fieldset>
+            <legend>Tipo de Construção</legend>
+
+            <label for="tipo-construcao">Tipo de Construção:</label>
+            <select id="tipo-construcao" name="tipo-construcao" required>
+                <option value="residencial">Residencial</option>
+                <option value="comercial">Comercial</option>
+                <option value="industrial">Industrial</option>
+                <option value="outro">Outro</option>
+            </select>
+
+            <label for="tipo-estabelecimento"
+                >Tipo de Estabelecimento (se aplicável):</label
+            >
+            <input
+                type="text"
+                id="tipo-estabelecimento"
+                name="tipo-estabelecimento"
+                placeholder="Exemplo: Loja, Escritório, Galpão"
+            />
+
+            <label for="uso-imovel">Uso do Imóvel:</label>
+            <input
+                type="text"
+                id="uso-imovel"
+                name="uso-imovel"
+                placeholder="Exemplo: Comércio, Armazenamento, Escritório"
+            />
+            </fieldset>
+            <fieldset>
+            <legend>Materiais e Acabamentos</legend>
+
+            <label for="materiais-preferenciais"
+                >Tipo de Materiais Preferenciais:</label
+            >
+            <input
+                type="text"
+                id="materiais-preferenciais"
+                name="materiais-preferenciais"
+                placeholder="Exemplo.: Tintas à base de água, massa corrida, etc."
+            />
+
+            <label for="acabamentos-preferenciais"
+                >Tipo de Acabamentos Preferenciais:</label
+            >
+            <input
+                type="text"
+                id="acabamentos-preferenciais"
+                name="acabamentos-preferenciais"
+                placeholder="Exemplo.: Acabamento fosco, brilhante, etc."
+            />
+
+            <label for="marcas-preferenciais"
+                >Preferências de Marcas (se houver):</label
+            >
+            <input
+                list="marcas"
+                id="marcas-preferenciais"
+                name="marcas-preferenciais"
+                placeholder="Selecione ou escreva"
+            />
+            <datalist id="marcas">
+                <option value="Coral"></option>
+                <option value="Suvinil"></option>
+                <option value="Sherwin-Williams"></option>
+                <option value="Renner"></option>
+                <option value="Eucatex"></option>
+                <option value="Luxens"></option>
+                <option value="Lukscolor"></option>
+                <option value="Futura"></option>
+                <option value="Metalatex"></option>
+                <option value="Brasilux"></option>
+                <option value="Weber"></option>
+                <option value="Vedacit"></option>
+                <option value="Hydronorth"></option>
+                <option value="Maza"></option>
+                <option value="Outro (especifique)"></option>
+            </datalist>
+
+            <label for="revestimento">Tipo de Revestimento:</label>
+            <input
+                list="tipos-revestimento"
+                id="revestimento"
+                name="revestimento"
+                placeholder="Selecione ou escreva"
+            />
+            <datalist id="tipos-revestimento">
+                <option value="Interno"></option>
+                <option value="Externo"></option>
+                <option value="Texturizado"></option>
+                <option value="Impermeável"></option>
+                <option value="Outro (especifique)"></option>
+            </datalist>
+
+            <label for="pisos">Tipo de Pisos:</label>
+            <input
+                list="tipos-piso"
+                id="pisos"
+                name="pisos"
+                placeholder="Selecione ou escreva"
+            />
+            <datalist id="tipos-piso">
+                <option value="Cerâmica"></option>
+                <option value="Madeira"></option>
+                <option value="Porcelanato"></option>
+                <option value="Vinílico"></option>
+                <option value="Cimentício"></option>
+                <option value="Outro (especifique)"></option>
+            </datalist>
+
+            <label for="marca-tinta">Preferência de Marca de Tinta:</label>
+            <input
+                list="marcas-tinta"
+                id="marca-tinta"
+                name="marca-tinta"
+                placeholder="Selecione ou escreva"
+            />
+            <datalist id="marcas-tinta">
+                <option value="Coral"></option>
+                <option value="Suvinil"></option>
+                <option value="Sherwin-Williams"></option>
+                <option value="Renner"></option>
+                <option value="Eucatex"></option>
+                <option value="Outro (especifique)"></option>
+            </datalist>
+
+            <label for="marca-acabamento">Preferência de Marca de Acabamento:</label>
+            <input
+                list="marcas-acabamento"
+                id="marca-acabamento"
+                name="marca-acabamento"
+                placeholder="Selecione ou escreva"
+            />
+            <datalist id="marcas-acabamento">
+                <option value="Luxens"></option>
+                <option value="Weber"></option>
+                <option value="Vedacit"></option>
+                <option value="Metalatex"></option>
+                <option value="Outro (especifique)"></option>
+            </datalist>
+            </fieldset>
+            <fieldset>
+            <legend>Detalhes Adicionais</legend>
+
+            <label for="adaptacoes">Possíveis Adaptações no Projeto:</label>
+            <textarea
+                id="adaptacoes"
+                name="adaptacoes"
+                rows="4"
+                placeholder="Exemplo: Ajustar o tamanho das portas ou mudanças na pintura original."
+            ></textarea>
+
+            <label for="permissoes"
+                >Informações sobre Permissões e Licenças (se necessário):</label
+            >
+            <textarea
+                id="permissoes"
+                name="permissoes"
+                rows="4"
+                placeholder="Exemplo: Licenças necessárias para reformas em áreas comuns de condomínios."
+            ></textarea>
+
+            <label for="acessibilidade"
+                >Acessibilidade (se o projeto incluir adaptações para pessoas com
+                deficiência):</label
+            >
+            <textarea
+                id="acessibilidade"
+                name="acessibilidade"
+                rows="4"
+                placeholder="Exemplo: Instalação de rampas, corrimãos, ou outros itens para acessibilidade."
+            ></textarea>
+
+            <label for="ambientais"
+                >Considerações Ambientais (sustentabilidade, eficiência energética,
+                etc.):</label
+            >
+            <textarea
+                id="ambientais"
+                name="ambientais"
+                rows="4"
+                placeholder="Exemplo: Uso de tintas ecológicas ou eficiência no consumo de energia."
+            ></textarea>
+
+            <label for="design-personalizado"
+                >Design Personalizado (detalhes decorativos ou específicos solicitados
+                pelo cliente):</label
+            >
+            <textarea
+                id="design-personalizado"
+                name="design-personalizado"
+                rows="4"
+                placeholder="Exemplo: Pinturas artísticas, texturas específicas ou detalhes de cor."
+            ></textarea>
+
+            <label for="material-especifico"
+                >Uso de Materiais Específicos (detalhes sobre materiais incomuns ou
+                personalizados):</label
+            >
+            <textarea
+                id="material-especifico"
+                name="material-especifico"
+                rows="4"
+                placeholder="Exemplo: Revestimento em pedras naturais ou materiais exclusivos."
+            ></textarea>
+            </fieldset>
+            <fieldset>
+            <legend>Orçamento e Pagamento</legend>
+            <label for="condicoes-pagamento">Condições de Pagamento:</label>
+            <select name="condicoes-pagamento" id="condicoes-pagamento"
+            >
+                <option value="a_vista">À Vista</option>
+                <option value="parcelado">Parcelado</option>
+                <option value="pix">PIX</option>
+                <option value="boleto">Transferência Bancária</option>
+                <option value="cartao_credito">Cartão de Crédito</option>
+                <option value="cartao_débito">Cartão de Débito</option>
+                <option value="outro">Outro</option>
+            </select>
+
+            <div id="pix-info">
+                <label for="pix-chave">Chave PIX (exemplo):</label>
+                <select id="pix-chave" name="pix-chave">
+                <option value="cpf">CPF: 000.000.000-00</option>
+                <option value="email">E-mail: exemplo@exemplo.com</option>
+                <option value="telefone">Telefone: (00) 00000-0000</option>
+                </select>
+            </div>
+
+            <label for="parcelas">Número de Parcelas (se aplicável):</label>
+            <input type="number" id="parcelas" name="parcelas" min="1" max="24" />
+
+            <label for="limite-orcamento"
+                >Limite de Orçamento (para referência interna):</label
+            >
+            <input type="number" id="limite-orcamento" name="limite-orcamento" />
+
+            <label for="observacoes-adicionais">Observações Adicionais:</label>
+            <textarea
+                id="observacoes-adicionais"
+                name="observacoes-adicionais"
+                rows="4"
+                placeholder="Exemplo: Detalhes sobre o pagamento, prazos ou descontos."
+            ></textarea>
+
+            <div id="formas-pagamento" class="payment-options">
+                <div class="checkbox-container">
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="pagamento-vista" name="payment-method" />
+                    <label for="pagamento-vista">À Vista</label>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input
+                    type="checkbox"
+                    id="pagamento-parcelado"
+                    name="payment-method"
+                    />
+                    <label for="pagamento-parcelado">Parcelado</label>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="pagamento-pix" name="payment-method" />
+                    <label for="pagamento-pix">PIX</label>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input
+                    type="checkbox"
+                    id="pagamento-boleto"
+                    name="payment-method"
+                    />
+                    <label for="pagamento-boleto">Boleto Bancário</label>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input
+                    type="checkbox"
+                    id="pagamento-credito"
+                    name="payment-method"
+                    />
+                    <label for="pagamento-credito">Cartão de Crédito</label>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input
+                    type="checkbox"
+                    id="pagamento-debito"
+                    name="payment-method"
+                    />
+                    <label for="pagamento-debito">Cartão de Débito</label>
+                </div>
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="pagamento-outro" name="payment-method" />
+                    <label for="pagamento-outro">Outro</label>
+                </div>
+                </div>
+            </div>
+            </fieldset>
+            <fieldset class="numero-container">
+                <legend class="flow-effect">Upload de Documentos</legend>
+                <p class="flow-effect">Por favor, faça o upload de arquivos relacionados ao projeto, como:</p>
+                <ul>
+                  <li class="flow-effect">Plantas e desenhos arquitetônicos</li>
+                  <li class="flow-effect">Imagens de acabamentos desejados</li>
+                  <li class="flow-effect">Fotos das áreas onde serão realizados os trabalhos</li>
+                </ul>
+              </fieldset>     
+
+            <div class="numero-container">
+                <div class="label-container">
+                  <label for="num-arquivos" class="label flow-effect">Número Máximo de Arquivos Permitidos:</label>
+                </div>
+                <span id="num-arquivos" class="numero-azul flow-effect">6</span>
+              </div>
+
+            <label for="arquivos">Anexar Arquivos (plantas, imagens, etc. extençoes ".pdf,.jpg,.jpeg,.png etc..." ):</label>
+            <input 
+            type="file" 
+            name="arquivos" 
+            id="arquivos" 
+            multiple 
+            accept=".pdf,.jpg,.jpeg,.png" 
+            />
+            <div id="arquivos-list" class="file-list">
+                <!-- Lista de arquivos selecionados será exibida aqui -->
+            </div>
+
+            <label for="descricao-arquivos">Descrição dos Arquivos:</label>
+            <textarea
+                id="descricao-arquivos"
+                name="descricao-arquivos"
+                rows="4"
+                placeholder="Adicione uma descrição para os arquivos, se necessário."
+            ></textarea>
+            
+            <p>
+                <strong>Observações:</strong> Certifique-se de que os arquivos estejam
+                dentro dos limites permitidos e forneça uma descrição se necessário.
+            </p>
+
+            <label for="video-arquivos">Adicionar Vídeos (opcional):</label>
+            <input type="file" name="videos" id="videos" multiple accept=".mp4,.avi,.mov,.mkv">
+
+            <div id="video-list" class="file-list">
+                <!-- Lista de vídeos selecionados será exibida aqui -->
+            </div>
+
+            <label for="descricao-videos">Descrição dos Vídeos:</label>
+            <textarea
+                id="descricao-videos"
+                name="descricao-videos"
+                rows="4"
+                placeholder="Adicione uma descrição para os vídeos, se necessário."
+            ></textarea>
+            </fieldset>
+        </fieldset>
+                
+        <!-- Modal para visualização em tela cheia -->
+        <div id="file-modal" class="file-modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-content" class="modal-content">
+            <!-- Conteúdo do modal será inserido aqui -->
+        </div>
+        </div>
+
+        <fieldset>
+        <legend>Mensagem Adicional</legend>
+        <label for="mensagem-adicional">Outras Informações ou Solicitações Especiais:</label>
+        <textarea id="mensagem-adicional" name="mensagem-adicional" rows="4"></textarea>
+        </fieldset>
+
+        <button class="button-orcamento" id="submit-form" type="button">Enviar Orçamento</button>
+
+    </form>
+    </form>
+
+        </form>
+        </section>
+        </main>
+
+        <!-- Fixar botões de navegação laterais -->
+        <div class="fixed-buttons">
+        <a href="#topo" title="Voltar ao Topo">
+        <i class="fas fa-arrow-up"></i>
+        <span>Voltar ao Topo</span>
+        </a>
+        <a href="#medir-metros" title="Medir Metros Quadrados">
+        <i class="fas fa-ruler"></i>
+        <span>Medir Metros</span>
+        </a>
+        <a href="#final" title="Ir para o Final">
+        <i class="fas fa-arrow-down"></i>
+        <span>Ir para Final</span>
+        </a>
+        <a href="https://samucar0801.github.io/" title="Criador do Site">
+        <i class="fas fa-link"></i>
+        <span>Criador do Site</span>
+        </a>
+        </div>
+
+        <!-- Conteúdo da página -->
+        <div id="topo"></div>
+        <div id="medir-metros"></div>
+        <div id="final"></div>
+<!-- Rodapé -->
+<footer class="site-footer">
+<div class="footer-container">
+<div class="footer-section">
+<h3>Sobre Nós</h3>
+<p>DJGpinturas oferece serviços profissionais de pintura e acabamento com qualidade e excelência.</p>
+</div>
+<div class="footer-section">
+<h3>Links Rápidos</h3>
+<ul>
+  <li><a href="#topo">Início</a></li>
+  <li><a href="/contato/contato.html">Contato</a></li>
+</ul>
+</div>
+<div class="footer-section">
+<h3>Contato</h3>
+<ul>
+  <li>Telefone: (11) XXXX-XXXX</li>
+  <li>Email: contato@djgpinturas.com</li>
+  <li>Endereço: São Paulo, SP</li>
+</ul>
+</div>
+</div>
+
+        <div class="footer-bottom">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+
+        </div>
+        <p>© 2024 DJGpinturas. Todos os direitos reservados.</p>
+        <p>Criado por <a href="https://samucar0801.github.io/" target="_blank">SAMUCAR0801</a></p>
+        </div>
+    </footer>
+
+<!-- Scripts para o modal -->
+<script>
+function closeModal() {
+document.getElementById('file-modal').style.display = 'none';
+}
+</script>
+<script src="orcamento.js"></script>
+<script src="/Orcamento/css e js do html/file-handler.js"></script>
+</body>
+</html>
+
